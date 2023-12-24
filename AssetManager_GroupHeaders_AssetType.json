@@ -15,15 +15,12 @@
           "overflow": "hidden",
           "margin": "1px 4px 4px 1px"
         },
-        "attributes": {
-          "class": "=if(@group.fieldData == 'Accessory', 'sp-css-backgroundColor-blueBackground37',if(@group.fieldData == 'Laptop', 'sp-css-backgroundColor-successBackground50',if(@group.fieldData == 'Printer', 'sp-css-backgroundColor-warningBackground50',if(@group.fieldData == 'Smartphone', 'sp-css-backgroundColor-blockingBackground50','sp-field-borderAllRegular sp-field-borderAllSolid sp-css-borderColor-neutralSecondary'))))"
-        },
+       "attributes": {
+            "class": "=if(@group.fieldData == 'Bioinformatics', 'sp-css-backgroundColor-BgCyan', if(@group.fieldData == 'Chet assigned', 'sp-css-backgroundColor-BgDustRose', if(@group.fieldData == 'Experiments', 'sp-css-backgroundColor-BgMintGreen', if(@group.fieldData == 'Extra tasks', 'sp-css-backgroundColor-BgSage', if(@group.fieldData == 'Insectary/NHP', 'sp-css-backgroundColor-BgLilac', 'sp-field-borderAllRegular sp-field-borderAllSolid sp-css-borderColor-neutralSecondary'))))"
+          },
         "children": [
           {
             "elmType": "span",
-            "attributes": {
-              "iconName": "=if(@group.fieldData == 'Accessory', 'CoffeeScript',if(@group.fieldData == 'Laptop', 'LaptopSelected',if(@group.fieldData == 'Printer', 'PrintfaxPrinterFile',if(@group.fieldData == 'Smartphone', 'CellPhone',''))))"
-            },
             "style": {
               "max-width": "24px",
               "max-height": "24px",
@@ -44,7 +41,7 @@
                 "children": [
                   {
                     "elmType": "div",
-                    "txtContent": "=  @group.count",
+                    "txtContent": "@group.fieldData.displayValue",
                     "style": {
                       "padding": "5px 5px 5px 5px",
                       "font-weight": "500"
@@ -67,7 +64,7 @@
                 "children": [
                   {
                     "elmType": "div",
-                    "txtContent": "=  @group.fieldData.displayValue +'(s)  ' ",
+                    "txtContent": "= '(' + @group.count + ') '",
                     "style": {
                       "padding": " ",
                       "font-weight": "500"
